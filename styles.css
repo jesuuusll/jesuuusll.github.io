@@ -1,0 +1,280 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f1e4; /* Fondo beige claro */
+}
+
+/* Encabezado con estilo tipo YouTube */
+.header {
+    background-color: #e0c097; /* Beige oscuro */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Botón de menú */
+.open-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #5b3e2e; /* Marrón oscuro */
+    background: none;
+    border: none;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #d4b59e; /* Beige medio */
+    border-radius: 2px 0 0 2px;
+    background-color: #faf2e4; /* Beige claro */
+    color: #5b3e2e; /* Texto marrón oscuro */
+    font-size: 16px;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #b4916a; /* Beige más oscuro */
+}
+
+/* Botón de búsqueda */
+.search-btn {
+    padding: 8px 16px;
+    background-color: #b4916a; /* Beige oscuro */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+}
+
+.search-btn:hover {
+    background-color: #a67b5b; /* Un tono más oscuro */
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100%;
+    width: 0;  /* Esto asegura que el menú esté oculto al cargar la página */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #5b3e2e; /* Marrón oscuro */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #f8f1e4; /* Beige claro */
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #7c5b44; /* Marrón más claro */
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 36px;
+    color: #f8f1e4; /* Beige claro */
+}
+
+/* Sidebar abierto */
+#sidebar.open {
+    width: 250px;
+}
+
+/* Flexbox para Recetas */
+.recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Links */
+a {
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+/* Listas */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+/* Contenedor del formulario */
+.recipe-form-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #faf2e4; /* Beige claro */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para el título del foro */
+.recipe-form-container h2 {
+    color: #5b3e2e; /* Marrón oscuro */
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.recipe-form-container h3 {
+    color: #7c5b44; /* Marrón más claro */
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los campos del formulario */
+.recipe-input, .recipe-textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #d4b59e; /* Beige medio */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5b3e2e; /* Marrón oscuro */
+    background-color: #fff7ed; /* Muy claro */
+}
+
+.recipe-input:focus, .recipe-textarea:focus {
+    outline: none;
+    border-color: #b4916a; /* Beige más oscuro */
+}
+
+/* Estilo para el textarea */
+.recipe-textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Estilo para el botón de publicación */
+.publish-btn {
+    padding: 10px 20px;
+    background-color: #b4916a; /* Beige oscuro */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.publish-btn:hover {
+    background-color: #a67b5b; /* Un tono más oscuro */
+}
+
+.recetas-section {
+    padding: 20px;
+    background-color: #faf2e4; /* Beige claro */
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.recipe-item {
+    background-color: #fff7ed;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #d4b59e;
+}
+
+.recipe-item h3 {
+    color: #5b3e2e;
+    margin-bottom: 10px;
+}
+
+.recipe-item p {
+    color: #7c5b44;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija en la pantalla */
+    z-index: 1; /* Por encima del resto del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrar verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Ancho máximo */
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-btn {
+    background-color: #f1c40f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-btn:hover {
+    background-color: #e1b60d;
+  }
+  
