@@ -85,20 +85,18 @@ window.onclick = function(event) {
     }
 }
 
-// Función para manejar la búsqueda de recetas
-document.getElementById('searchBtn').addEventListener('click', function() {
-    const searchQuery = document.getElementById('searchBar').value.toLowerCase();
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
-    // Filtrar las recetas que coincidan con la búsqueda
-    const filteredRecipes = recipes.filter(function(recipe) {
-        return recipe.title.toLowerCase().includes(searchQuery) || 
-               recipe.content.toLowerCase().includes(searchQuery);
-    });
-
-    // Mostrar las recetas filtradas
-    displayRecipes(filteredRecipes);
+// Función para manejar la búsqueda y redirigir a Google
+document.querySelector('.search-btn').addEventListener('click', function() {
+    const searchQuery = document.querySelector('.search-bar').value.trim();
+    if (searchQuery) {
+        // Redirigir a Google con la búsqueda del usuario
+        const googleSearchURL = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+        window.location.href = googleSearchURL;
+    } else {
+        alert("Por favor, ingresa un término para buscar.");
+    }
 });
+
 
 // Función para mostrar recetas en la página (recetas filtradas o todas)
 function displayRecipes(recipesToDisplay) {
