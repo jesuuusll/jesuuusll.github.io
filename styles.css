@@ -1,306 +1,217 @@
-/* Reset general */
-* {
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #faf3e3; /* Fondo beige claro */
+    color: #4f4f4f; /* Gris oscuro */
 }
 
-/* Estilos generales del body */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f1e4; /* Fondo beige claro */
-}
-
-.header {
-    background-color: #e0c097; /* Beige oscuro */
-    padding: 10px 20px;
+/* Header */
+header {
+    background-color: #eacda3; /* Beige pastel */
+    color: #4f4f4f;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-search-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
+    gap: 1rem;
 }
 
-/* Botón de menú */
-.open-btn {
-    font-size: 24px;
-    cursor: pointer;
-    color: #5b3e2e; /* Marrón oscuro */
-    background: none;
-    border: none;
-}
-
-/* Barra de búsqueda */
 .search-bar {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid #d4b59e; /* Beige medio */
-    border-radius: 2px 0 0 2px;
-    background-color: #faf2e4; /* Beige claro */
-    color: #5b3e2e; /* Texto marrón oscuro */
-    font-size: 16px;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #d3b89c;
+    background-color: #fef9f3; /* Beige muy claro */
+    width: 200px;
+    transition: width 0.3s ease;
 }
 
 .search-bar:focus {
     outline: none;
-    border-color: #b4916a; /* Beige más oscuro */
+    width: 250px;
+    border-color: #c2a27a;
 }
 
-/* Botón de búsqueda */
 .search-btn {
-    padding: 8px 16px;
-    background-color: #b4916a; /* Beige oscuro */
-    color: white;
+    background-color: #fef9f3;
     border: none;
+    font-size: 1.2rem;
     cursor: pointer;
-    border-radius: 0 2px 2px 0;
-}
-
-.search-btn:hover {
-    background-color: #a67b5b; /* Un tono más oscuro */
+    color: #eacda3;
 }
 
 /* Sidebar */
 .sidebar {
     height: 100%;
-    width: 0;  /* Esto asegura que el menú esté oculto al cargar la página */
+    width: 0;
     position: fixed;
+    z-index: 1000;
     top: 0;
     left: 0;
-    background-color: #5b3e2e; /* Marrón oscuro */
+    background-color: #eacda3; /* Beige pastel */
     overflow-x: hidden;
     transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar a {
-    padding: 10px 15px;
+    padding: 15px 20px;
+    color: #4f4f4f;
     text-decoration: none;
-    font-size: 22px;
-    color: #f8f1e4; /* Beige claro */
-    display: block;
-    transition: 0.3s;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar a:hover {
-    background-color: #7c5b44; /* Marrón más claro */
+    background-color: #dec5a7; /* Beige intermedio */
 }
 
-.sidebar .close-btn {
+.close-btn {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 36px;
-    color: #f8f1e4; /* Beige claro */
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
 }
 
-/* Sidebar abierto */
-#sidebar.open {
-    width: 250px;
+/* Secciones */
+.section {
+    padding: 2rem;
+    margin-top: 80px; /* Para evitar solapamiento con el header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
 }
 
-/* Flexbox para Recetas */
+/* Contenedor de recetas */
 .recipes-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
+    gap: 1.5rem;
+    justify-content: center;
 }
 
 .recipe-card {
-    background-color: white;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    margin: 20px;
-    padding: 15px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #fef9f3; /* Beige muy claro */
+    border: 1px solid #d3b89c;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 2rem); /* Ajustable para responsividad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
 }
 
-/* Links */
-a {
-    color: #4CAF50;
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card h3 {
+    margin: 0.5rem 0;
+    color: #4f4f4f;
+}
+
+.recipe-card a {
+    display: inline-block;
+    margin-top: auto;
+    color: #c2a27a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recipe-card a:hover {
     text-decoration: underline;
 }
 
-/* Listas */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-ol {
-    margin-left: 20px;
-}
-
-/* Contenedor del formulario */
+/* Formulario */
 .recipe-form-container {
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 600px;
-    background-color: #faf2e4; /* Beige claro */
+    padding: 2rem;
+    background: #fde8d0; /* Beige cálido */
+    margin-top: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* Estilo para el título del foro */
-.recipe-form-container h2 {
-    color: #5b3e2e; /* Marrón oscuro */
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.recipe-form-container h3 {
-    color: #7c5b44; /* Marrón más claro */
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para los campos del formulario */
-.recipe-input, .recipe-textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #d4b59e; /* Beige medio */
-    border-radius: 5px;
-    font-size: 16px;
-    color: #5b3e2e; /* Marrón oscuro */
-    background-color: #fff7ed; /* Muy claro */
-}
-
-.recipe-input:focus, .recipe-textarea:focus {
-    outline: none;
-    border-color: #b4916a; /* Beige más oscuro */
-}
-
+.recipe-input,
 .recipe-textarea {
-    height: 150px;
-    resize: vertical;
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #d3b89c;
+    border-radius: 5px;
+    background-color: #fef9f3; /* Beige muy claro */
 }
 
 .publish-btn {
-    padding: 10px 20px;
-    background-color: #b4916a; /* Beige oscuro */
-    color: white;
+    background-color: #eacda3; /* Beige pastel */
+    color: #4f4f4f;
+    padding: 0.8rem 1.5rem;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-self: center;
 }
 
 .publish-btn:hover {
-    background-color: #a67b5b; /* Un tono más oscuro */
+    background-color: #dec5a7; /* Beige intermedio */
 }
 
-.recetas-section {
-    padding: 20px;
-    background-color: #faf2e4; /* Beige claro */
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.recipe-item {
-    background-color: #fff7ed;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #d4b59e;
-}
-
-.recipe-item h3 {
-    color: #5b3e2e;
-    margin-bottom: 10px;
-}
-
-.recipe-item p {
-    color: #7c5b44;
-}
-
-/* Estilos para el modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Posición fija en la pantalla */
-    z-index: 1; /* Por encima del resto del contenido */
-    left: 0;
-    top: 0;
+/* Tabla */
+table {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  }
-  
-  .modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;}
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background: #fef9f3;
+}
 
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .modal-btn {
-    background-color: #f1c40f;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-btn:hover {
-    background-color: #e1b60d;
-  }
-  
-  @media (max-width: 768px) {
+th,
+td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #d3b89c;
+}
+
+th {
+    background-color: #eacda3; /* Beige pastel */
+    color: #4f4f4f;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 150px;
+    }
+
     .recipes-container {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
     }
 
     .recipe-card {
-        width: 90%;
-    }
-
-    .sidebar {
-        width: 100%;
+        flex: 1 1 100%;
     }
 }
 
-.favorite-checkbox {
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.favorite-checkbox + label {
-    font-size: 14px;
-    cursor: pointer;
-    color: #555;
-}
-
-.favorite-checkbox:checked + label {
-    color: #ff5722; /* Cambia a un color destacado */
-    font-weight: bold;
-}
