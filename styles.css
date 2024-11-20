@@ -13,7 +13,6 @@ body {
     background-color: #f8f1e4; /* Fondo beige claro */
 }
 
-/* Encabezado con estilo tipo YouTube */
 .header {
     background-color: #e0c097; /* Beige oscuro */
     padding: 10px 20px;
@@ -183,13 +182,11 @@ ol {
     border-color: #b4916a; /* Beige más oscuro */
 }
 
-/* Estilo para el textarea */
 .recipe-textarea {
     height: 150px;
     resize: vertical;
 }
 
-/* Estilo para el botón de publicación */
 .publish-btn {
     padding: 10px 20px;
     background-color: #b4916a; /* Beige oscuro */
@@ -241,15 +238,14 @@ ol {
   }
   
   .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* Centrar verticalmente */
+    background-color: white;
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 400px; /* Ancho máximo */
-    text-align: center;
     border-radius: 10px;
-  }
+    width: 80%;
+    max-width: 600px;}
+
   
   .close {
     color: #aaa;
@@ -278,3 +274,33 @@ ol {
     background-color: #e1b60d;
   }
   
+  @media (max-width: 768px) {
+    .recipes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card {
+        width: 90%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+.favorite-checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.favorite-checkbox + label {
+    font-size: 14px;
+    cursor: pointer;
+    color: #555;
+}
+
+.favorite-checkbox:checked + label {
+    color: #ff5722; /* Cambia a un color destacado */
+    font-weight: bold;
+}
