@@ -11,7 +11,8 @@
         <div class="menu-search-container">
             <span class="open-btn" onclick="openNav()">&#9776; Menú</span>
             <input type="text" class="search-bar" placeholder="Buscar recetas...">
-            <button class="search-btn">&#128269;</button>
+            <button class="search-btn" aria-label="Buscar recetas">&#128269;</button>
+
         </div>
     </header>
 
@@ -23,29 +24,34 @@
         <a href="#publicar">Publicar</a>
     </nav>
 
-    <!-- Sección de Recetas -->
-<ul>
-    <div class="section" id="recetas">
+
+    <!-- Sección de Recetas Destacadas -->
+    <section id="recetas-destacadas" class="section">
         <h2>Recetas Destacadas</h2>
-        <div class="recipes-container">
-            <div class="recipe-card">
-                <h3><li>Ensalada César</li></h3>
+        <ul class="recipes-container">
+            <li class="recipe-card">
+                <input type="checkbox" id="cesar" class="favorite-checkbox">
+                <label for="cesar">Marcar como favorita</label>
+                <h3>Ensalada César</h3>
                 <p>Una deliciosa ensalada con pollo, lechuga y aderezo César.</p>
                 <a href="https://youtu.be/VpRXRl1dQMk?si=YRfB8nCo9_TM1LdL">Ver receta</a>
-            </div>
-            <div class="recipe-card">
-                <h3><li>Spaghetti Carbonara</li></h3>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="carbonara" class="favorite-checkbox">
+                <label for="carbonara">Marcar como favorita</label>
+                <h3>Spaghetti Carbonara</h3>
                 <p>Un clásico italiano con pasta, huevo y queso.</p>
                 <a href="https://youtu.be/XFj2gDpNkrk?si=Z7KCwVsAP26XcKsh">Ver receta</a>
-            </div>
-            <div class="recipe-card">
-                <h3><li>Tacos al Pastor</li></h3>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="tacos" class="favorite-checkbox">
+                <label for="tacos">Marcar como favorita</label>
+                <h3>Tacos al Pastor</h3>
                 <p>Tacos deliciosos con carne marinada y piña.</p>
                 <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-            </div>
-        </div>
-    </div>
-</ul>
+            </li>
+        </ul>
+    </section>
 
     <!-- Formulario para crear una nueva publicación -->
     <div class="recipe-form-container" id="publicar">
@@ -58,71 +64,91 @@
         </form>
     </div>
 
-    <div class="content">
-        <!-- Sección para mostrar las recetas publicadas -->
+    <div class="content"><!-- Sección para mostrar las recetas publicadas -->
         <section id="recetas" class="recetas-section">
             <h2>Recetas Publicadas</h2>
             <div id="recipeList"></div> <!-- Aquí aparecerán las recetas -->
         </section>
     </div>
 
+    <!-- Sección del Top 10 -->
+    <section id="top10" class="section">
         <h2>Top 10 Comidas</h2>
-        <ol>
-            <div class="section" id="explorar">
-                <div class="recipe-card">
-                    <h3><li>Hamburguesa</li></h3>
-                    <p>Como su nombre lo indica, es originaria de Hamburgo -Alemania-. La enorme migración germánica hacia los Estados Unidos hizo que las hamburguesas se volvieran cada vez más popular, hasta conocerse en el mundo entero: carne picada bien comprimida y en forma de disco que, generalmente, se sirve como sándwich. Se le agregan verduras y se acompaña con papas fritas.</p>
-                    <a href="https://youtu.be/VpRXRl1dQMk?si=YRfB8nCo9_TM1LdL">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                <h3><li>Pizza</li></h3>
-                <p>Este famoso pan italiano, horneado, plano y circular, elaborado con harina de trigo, sal, agua y levadura, puede llevar los más diversos ingredientes por arriba. Su versión básica: salsa de tomate y queso. En Italia, la pizza más conocida es la “margarita”, con tomates, queso mozzarella y albahaca. Refleja los colores de la bandera italiana y su nombre hace honor a la reina Margherita.</p>
+        <ol class="recipes-container">
+            <li class="recipe-card">
+                <input type="checkbox" id="hamburguesa" class="favorite-checkbox">
+                <label for="hamburguesa">Marcar como favorita</label>
+                <h3>Hamburguesa</h3>
+                <p>Como su nombre lo indica, es originaria de Hamburgo -Alemania-. La enorme migración germánica hacia los Estados Unidos hizo que las hamburguesas se volvieran cada vez más populares. Generalmente, se sirve como sándwich acompañado de papas fritas.</p>
+                <a href="https://youtu.be/VpRXRl1dQMk?si=YRfB8nCo9_TM1LdL">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="pizza" class="favorite-checkbox">
+                <label for="pizza">Marcar como favorita</label>
+                <h3>Pizza</h3>
+                <p>Este famoso pan italiano horneado y circular puede llevar los más diversos ingredientes por arriba. Su versión clásica: salsa de tomate y queso mozzarella.</p>
                 <a href="https://youtu.be/XFj2gDpNkrk?si=Z7KCwVsAP26XcKsh">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                <h3><li>Sushi</li></h3>
-                    <p>Este tradicional plato de Japón despertó furor en las últimas décadas y alrededor de todo el globo terráqueo. Se prepara con arroz de grano redondo, que es envuelto en algas nori junto a diferentes ingredientes. Mayoritariamente, se tratan de pescados crudos acompañados con vegetales. El salmón y el kani kama suelen ser las estrellas favoritas del sushi.</p>
-                    <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Paella</li></h3>
-                        <p>Continuando con el arroz y los pescados, la paella es un clásico de España que ha sabido ganarse el aprecio internacional. Originaria de Valencia, debe su nombre a la gigante “paellera” dónde se cocina. Se trata de un buen plato de arroz y mariscos, condimentado con azafrán y hierbas verdes. Como siempre, hay muchas versiones y se hace también con pollo, cerdo o, simplemente, vegetales.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Fondue</li></h3>
-                        <p>Cuando llega el invierno y las bajas temperaturas, ¿a quién no le apetece una rica y calentita fondue? Suiza nos regala esta exquisita preparación de queso fundido, acompañada por pedacitos de pan. Es común servirla con champiñones para sumergir en el queso y saborear. Y si te quedas con hambre, también puedes servir la fondue de chocolate como postre. En ese caso, se acompaña con frutas.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Burrito</li></h3>
-                        <p>Su exquisitez y practicidad les han permitido a los burritos consagrarse como otra de las comidas más populares del universo. Autóctono de México, contiene algunos de los ingredientes más representativos de su país: una tortilla tradicional, a la que se le agrega un relleno -generalmente carne, pollo y maíz- y luego se la enrolla para formar el famoso burrito.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Chop Suey</li></h3>
-                        <p>Nuevamente, la comida oriental se hace lugar en este listado tan pretencioso. Oriundo de la mística China, el chop suey no sólo ha ganado popularidad en Oriente sino también en muchas regiones de Occidente. El plato se compone de carne de cerdo o pollo, huevos y vegetales salteados, con salsa de soja. Para cocinar los ingredientes se utiliza un wok, una sartén grande y cóncava.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Bandeja paisa</li></h3>
-                        <p>Es el platillo perfecto para quienes tienen buen apetito, por su generosas porciones y gran variedad de ingredientes, que representan la gastronomía de Colombia: arroz, frijoles, chicharrón, carne molida, huevo frito, aguacate, arepa, chorizo y patacón -plátano verde frito-. Toda esta cantidad de comida hace necesario que se sirva en una bandeja grande y por ello es llamada “Bandeja Paisa”.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Ratatouille</li></h3>
-                        <p>Esta famosa especialidad proviene de la Provenza -región sureste de Francia- y es un guiso de tomates, ajos, cebolla, pimientos, berenjenas y calabacín, regados en aceite de oliva. Se condimenta con las llamadas hierbas provenzales, como tomillo, romero, orégano, laurel y albahaca. El ratatouille se sirve frío o caliente, generalmente como acompañamiento de carnes o pescados.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-                <div class="recipe-card">
-                    <h3><li>Ceviche</li></h3>
-                        <p>Este plato nacional de Perú vive un momento de mucha fama en la actualidad, luego de destacarse en diferentes ferias gastronómicas realizadas en distintas partes del mundo. El ceviche peruano se prepara con pescado o mariscos crudos, cebolla, chile, jugo de limón y sal. Puede ir acompañado de camote, choclo, cancha serrana o chifles, otras comidas muy comunes de este país de Sudamérica.</p>
-                        <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
-                </div>
-            </div>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="sushi" class="favorite-checkbox">
+                <label for="sushi">Marcar como favorita</label>
+                <h3>Sushi</h3>
+                <p>Tradicional de Japón, elaborado con arroz de grano redondo, algas nori y pescados crudos, acompañado de vegetales.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="paella" class="favorite-checkbox">
+                <label for="paella">Marcar como favorita</label>
+                <h3>Paella</h3>
+                <p>Clásico de España, originario de Valencia. Un plato de arroz con mariscos, azafrán y hierbas verdes.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="fondue" class="favorite-checkbox">
+                <label for="fondue">Marcar como favorita</label>
+                <h3>Fondue</h3>
+                <p>Preparación suiza de queso fundido acompañada por pedacitos de pan. También puede servirse de chocolate como postre.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="burrito" class="favorite-checkbox">
+                <label for="burrito">Marcar como favorita</label>
+                <h3>Burrito</h3>
+                <p>Auténtico de México. Una tortilla rellena de carne, pollo o maíz y enrollada para formar el famoso burrito.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="chop-suey" class="favorite-checkbox">
+                <label for="chop-suey">Marcar como favorita</label>
+                <h3>Chop Suey</h3>
+                <p>Plato chino compuesto de carne de cerdo o pollo, vegetales salteados y salsa de soja, cocinados en un wok.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="bandeja-paisa" class="favorite-checkbox">
+                <label for="bandeja-paisa">Marcar como favorita</label>
+                <h3>Bandeja Paisa</h3>
+                <p>Plato colombiano con arroz, frijoles, chicharrón, carne molida, huevo frito, aguacate, arepa y chorizo.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="ratatouille" class="favorite-checkbox">
+                <label for="ratatouille">Marcar como favorita</label>
+                <h3>Ratatouille</h3>
+                <p>Plato francés de tomates, ajos, cebolla, berenjenas y calabacín, condimentado con hierbas provenzales.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
+            <li class="recipe-card">
+                <input type="checkbox" id="ceviche" class="favorite-checkbox">
+                <label for="ceviche">Marcar como favorita</label>
+                <h3>Ceviche</h3>
+                <p>Plato peruano de pescado o mariscos crudos con jugo de limón, cebolla y chile, acompañado de camote o choclo.</p>
+                <a href="https://youtu.be/nqXc8hYJbd8?si=4LPY2VRPmNzu5ahs">Ver receta</a>
+            </li>
         </ol>
-    </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
 </html>
+
